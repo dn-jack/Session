@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Session</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>session</servlet-name>
+    <servlet-class>com.dongnao.jack.session.SessionServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>session</servlet-name>
+    <url-pattern>/session/save</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>getsession</servlet-name>
+    <servlet-class>com.dongnao.jack.session.GetSessionServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getsession</servlet-name>
+    <url-pattern>/session/getSession</url-pattern>
+  </servlet-mapping>
+  <filter>
+  	<filter-name>sessionFilter</filter-name>
+  	<filter-class>com.dongnao.jack.session.SessionFilter</filter-class>
+  </filter>
+   <filter-mapping>
+  <filter-name>sessionFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+</web-app>
